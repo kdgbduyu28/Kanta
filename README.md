@@ -1,5 +1,7 @@
 # Kanta
 
+[![CI](https://github.com/kdgbduyu28/Kanta/actions/workflows/ci.yml/badge.svg)](https://github.com/kdgbduyu28/Kanta/actions/workflows/ci.yml)
+
 **Your music. All in one.** One library, one set of playlists and one queue for the music apps you
 already use — Spotify, YouTube Music, Apple Music — plus the music files on your phone.
 
@@ -56,7 +58,8 @@ npx expo run:android
 - `npm test` — vitest (library, links, queue helpers, lyrics; SQLite tests use Node 22's `node:sqlite`)
 - `cd android && ./gradlew :kanta-media:testDebugUnitTest` — Kotlin queue/audio rules
 - `npm run web` — screens with sample data in a browser (no playback)
-- `./scripts/release.sh --apk` — tag and let GitHub Actions build the APK
+- `./scripts/release.sh --apk` — tag and let GitHub Actions build the APK into Releases
+- CI (`.github/workflows/ci.yml`) runs the JS tests, typecheck, lint and Kotlin unit tests on every push
 
 Structure: `src/app` (screens, expo-router), `src/lib` (pure logic), `src/db` (SQLite), `src/store`
 (zustand), `modules/kanta-media` (Kotlin: media sessions, queue engine, Media3 local player, EQ).

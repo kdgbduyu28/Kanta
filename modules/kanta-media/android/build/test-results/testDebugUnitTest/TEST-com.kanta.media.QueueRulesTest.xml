@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kanta.media.QueueRulesTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-20T11:29:44.304Z" hostname="tim-3.local" time="0.022">
+  <properties/>
+  <testcase name="mediaIds" classname="com.kanta.media.QueueRulesTest" time="0.004"/>
+  <testcase name="classifyTransitions" classname="com.kanta.media.QueueRulesTest" time="0.013"/>
+  <testcase name="nextIndexRepeatModes" classname="com.kanta.media.QueueRulesTest" time="0.001"/>
+  <testcase name="sameSongVariants" classname="com.kanta.media.QueueRulesTest" time="0.001"/>
+  <testcase name="shuffleStartsWithChosenSong" classname="com.kanta.media.QueueRulesTest" time="0.002"/>
+  <testcase name="pickActiveSession" classname="com.kanta.media.QueueRulesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
