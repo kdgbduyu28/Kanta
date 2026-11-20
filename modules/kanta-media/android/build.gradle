@@ -1,0 +1,39 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'com.kanta.media'
+version = '1.0.0'
+
+// The Spotify remote kit is optional: drop spotify-app-remote-release-*.aar into android/libs to enable it.
+def spotifyAar = file('libs').listFiles()?.find { it.name.startsWith('spotify-app-remote') }
+
+android {
+  namespace 'com.kanta.media'
+  defaultConfig {
+    versionCode 1
+    versionName '1.0.0'
+    minSdkVersion 28
+  }
+  sourceSets {
+    main.java.srcDirs += (spotifyAar != null ? 'src/spotify/java' : 'src/nospotify/java')
+  }
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+}
+
+dependencies {
+  implementation 'androidx.core:core-ktx:1.16.0'
+  implementation 'androidx.media:media:1.7.0'
+  implementation 'androidx.media3:media3-exoplayer:1.9.4'
+  implementation 'androidx.media3:media3-session:1.9.4'
+  implementation 'androidx.media3:media3-extractor:1.9.4'
+  if (spotifyAar != null) {
+    implementation files(spotifyAar)
+    implementation 'com.spotify.android:auth:2.1.1'
+    implementation 'com.google.code.gson:gson:2.11.0'
+  }
+  testImplementation 'junit:junit:4.13.2'
+}
