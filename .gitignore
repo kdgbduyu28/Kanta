@@ -45,3 +45,7 @@ yarn-error.*
 
 # Design reference UI kit: kept local, not ours to republish
 docs/design/*.pdf
+
+# Native module build output
+modules/*/android/build/
+modules/*/android/.cxx/
